@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/Tipo-Atividade-blue" />
 </p>
 
-<p>O projeto a seguir foi desenvolvido como uma atividade proposta pelo Professor Willian Silva, como parte da avaliação da disciplina de Programação para a Web no curso de Engenharia de Software da IESB. Trata-se de uma Landing Page para a Cafeteria da Tia Rose.</p>
+<p>O projeto a seguir foi desenvolvido como uma atividade proposta pelo Professor Willian Silva, como parte da avaliação da disciplina de Programação para a Web no curso de Engenharia de Software da IESB. Trata-se de uma Landing Page para a Cafeteria da Tia Rosa.</p>
 
 ## Tecnologias
 - [Yarn](https://yarnpkg.com/)
