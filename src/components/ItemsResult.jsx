@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import { AiFillStar } from "react-icons/ai";
-// eslint-disable-next-line react/prop-types
 const ItemsResult = ({ section, filter }) => {
   const products = [
     {

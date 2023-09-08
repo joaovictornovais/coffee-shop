@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import FilterButton from "./FilterButton";
 import { AiOutlineStar } from "react-icons/ai";
 import { MdAttachMoney } from "react-icons/md";

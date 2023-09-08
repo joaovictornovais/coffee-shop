@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { Carousel } from "@material-tailwind/react";
 
-// eslint-disable-next-line react/prop-types
 const Promotions = ({ searchToFilters }) => {
   return (
     <Carousel
