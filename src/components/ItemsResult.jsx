@@ -1,6 +1,6 @@
 import { AiFillStar } from "react-icons/ai";
 // eslint-disable-next-line react/prop-types
-const ItemsResult = ({ section }) => {
+const ItemsResult = ({ section, filter }) => {
   const products = [
     {
       id: 1,
@@ -98,8 +98,12 @@ const ItemsResult = ({ section }) => {
     },
   ];
   const sectionFilter = products.filter((product) => {
-    return product.category === section;
+    const result =
+      product.category === section &&
+      product.name.toLowerCase().includes(filter.toLowerCase().trim());
+    return result;
   });
+  console.log(filter);
   return (
     <div className="flex flex-col gap-4">
       {sectionFilter.map((product) => (

@@ -1,9 +1,10 @@
 import { Carousel } from "@material-tailwind/react";
 
-const Promotions = () => {
+// eslint-disable-next-line react/prop-types
+const Promotions = ({ searchToFilters }) => {
   return (
     <Carousel
-      className="rounded-xl"
+      className={searchToFilters !== "" ? "hidden" : "rounded-xl"}
       transition={{ duration: 1 }}
       autoplay={true}
       loop={true}

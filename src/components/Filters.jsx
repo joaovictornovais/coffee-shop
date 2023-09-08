@@ -5,7 +5,7 @@ import { HiOutlineSpeakerphone } from "react-icons/hi";
 import ItemsResult from "./ItemsResult";
 import { useState } from "react";
 
-const Filters = () => {
+const Filters = ({ searchToFilters }) => {
   const [section, setSection] = useState("Coffee");
 
   return (
@@ -68,7 +68,7 @@ const Filters = () => {
         <FilterButton icon={<MdAttachMoney />} filter={"Preço"} />
         <FilterButton icon={<HiOutlineSpeakerphone />} filter={"Promoções"} />
       </div>
-      <ItemsResult section={section} />
+      <ItemsResult section={section} filter={searchToFilters} />
     </div>
   );
 };
