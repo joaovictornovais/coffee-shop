@@ -8,12 +8,17 @@
 <p>O projeto a seguir foi desenvolvido como uma atividade proposta pelo Professor Willian Silva, como parte da avaliação da disciplina de Programação para a Web no curso de Engenharia de Software da IESB. Trata-se de uma Landing Page para a Cafeteria da Tia Rosa.</p>
 
 ## Tecnologias
+
 - [Yarn](https://yarnpkg.com/)
 - [Vite](https://vitejs.dev/)
 - [React](https://react.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
 
-<p>Utilizei o <b>YARN</b> como gerenciador de pacotes pela velocidade e performance superior ao NPM. <a href="https://www.knowledgehut.com/blog/web-development/yarn-vs-npm#:~:text=The%20major%20difference%20between%20NPM,considered%20more%20secure%20than%20NPM">Saiba mais</a></p>
-<p>Optei pelo servidor de desenvolvimento<b>VITE</b> por conta de ter uma compilação rápida e forncer uma experiência de desenvolvimento mais ágil. <a href="https://cleancommit.io/blog/what-is-vite/#:~:text=Vite%20is%20a%20modern%20frontend,sizes%2C%20and%20improved%20developer%20experience.">Saiba mais</a></p>
-<p><b>REACT</b> foi o framework, ou melhor, <b>BIBLIOTECA</b>, que o professor definiou como pré-requisito de avaliação.</p>
-<p>Para facilitar a estilização e responsividade do site, optei em utilizar o framework de CSS <b>TailwindCSS</b></p>
+> <p>Utilizei o <b>YARN</b> como gerenciador de pacotes pela velocidade e performance superior ao NPM. <a href="https://www.knowledgehut.com/blog/web-development/yarn-vs-npm#:~:text=The%20major%20difference%20between%20NPM,considered%20more%20secure%20than%20NPM">Saiba mais</a></p>
+> <p>Optei pelo servidor de desenvolvimento <b>VITE</b> por conta de ter uma compilação rápida e forncer uma experiência de desenvolvimento mais ágil. <a href="https://cleancommit.io/blog/what-is-vite/#:~:text=Vite%20is%20a%20modern%20frontend,sizes%2C%20and%20improved%20developer%20experience.">Saiba mais</a></p>
+> <p><b>REACT</b> foi o framework, ou melhor, <b>BIBLIOTECA</b>, que o professor definiou como pré-requisito de avaliação.</p>
+> <p>Para facilitar a estilização e responsividade do site, optei em utilizar o framework de CSS <b>TailwindCSS</b></p>
+
+## Disclaimer
+
+<p>Utilizei o modelo do figma feito pela <a href="https://www.figma.com/@reee">@reee</a> que pode ser encontrado gratuitamente no Figma Community: "<a href="https://www.figma.com/file/Tn4OMX8Ug9P8vhTZm1Qe4F/Shopfee-(Coffee-Shop)-(Community)?type=design&node-id=510-6021&mode=design&t=jDssXftN7KLFrxjj-0">Shopfee (Coffee Shop)</a>",  visto que UI/UX não é o meu forte.</p>
