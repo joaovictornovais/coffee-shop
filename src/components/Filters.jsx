@@ -15,7 +15,7 @@ const Filters = ({ searchToFilters }) => {
         <div
           onClick={() => setSection("Coffee")}
           className={
-            section === "Coffee"
+            section === "Coffee" || searchToFilters !== ""
               ? "space-y-2 text-brown-800"
               : "space-y-2 text-brown-200"
           }
@@ -23,7 +23,7 @@ const Filters = ({ searchToFilters }) => {
           <p>Café</p>
           <div
             className={
-              section === "Coffee"
+              section === "Coffee" || searchToFilters !== ""
                 ? "border-[2px] border-brown-800"
                 : "border-[2px] border-brown-200"
             }
@@ -32,7 +32,7 @@ const Filters = ({ searchToFilters }) => {
         <div
           onClick={() => setSection("Drinks")}
           className={
-            section === "Drinks"
+            section === "Drinks" || searchToFilters !== ""
               ? "space-y-2 text-brown-800"
               : "space-y-2 text-brown-200"
           }
@@ -40,7 +40,7 @@ const Filters = ({ searchToFilters }) => {
           <p>Bebidas</p>
           <div
             className={
-              section === "Drinks"
+              section === "Drinks" || searchToFilters !== ""
                 ? "border-[2px] border-brown-800"
                 : "border-[2px] border-brown-200"
             }
@@ -49,7 +49,7 @@ const Filters = ({ searchToFilters }) => {
         <div
           onClick={() => setSection("Pastry")}
           className={
-            section === "Pastry"
+            section === "Pastry" || searchToFilters !== ""
               ? "space-y-2 text-brown-800"
               : "space-y-2 text-brown-200"
           }
@@ -57,7 +57,7 @@ const Filters = ({ searchToFilters }) => {
           <p>Pastelaria</p>
           <div
             className={
-              section === "Pastry"
+              section === "Pastry" || searchToFilters !== ""
                 ? "border-[2px] border-brown-800"
                 : "border-[2px] border-brown-200"
             }

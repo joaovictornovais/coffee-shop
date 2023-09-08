@@ -97,13 +97,16 @@ const ItemsResult = ({ section, filter }) => {
       rating: 4.7,
     },
   ];
+
   const sectionFilter = products.filter((product) => {
-    const result =
-      product.category === section &&
-      product.name.toLowerCase().includes(filter.toLowerCase().trim());
-    return result;
+    const name = product.name
+      .toLowerCase()
+      .includes(filter.toLowerCase().trim());
+    const category = product.category === section;
+    if (filter !== "") return name;
+    else return category;
   });
-  console.log(filter);
+  console.log(sectionFilter);
   return (
     <div className="flex flex-col gap-4">
       {sectionFilter.map((product) => (
