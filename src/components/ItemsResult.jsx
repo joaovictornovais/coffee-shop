@@ -103,18 +103,27 @@ const ItemsResult = ({ section }) => {
   return (
     <div className="flex flex-col gap-4">
       {sectionFilter.map((product) => (
-        <div key={product.id} className="flex gap-4 bg-gray-50 p-2">
-          <div className="flex flex-col items-center rounded-full bg-gray-200 relative">
-            <img className="min-w-[100px] min-h-[100px]" src={product.image} />
-            <div className="flex items-center absolute bottom-0 gap-1 font-medium bg-gray-100 p-1 rounded-2xl shadow-sm">
-              {<AiFillStar className="text-yellow-600" />}
-              <p>{product.rating}</p>
+        <div
+          key={product.id}
+          className="flex gap-4 bg-gray-50 p-2 justify-between"
+        >
+          <div className="flex gap-4">
+            <div className="flex flex-col items-center rounded-full bg-gray-200 relative">
+              <img
+                className="min-w-[100px] min-h-[100px]"
+                src={product.image}
+              />
+              <div className="flex items-center absolute bottom-0 gap-1 font-medium bg-gray-100 p-1 rounded-2xl shadow-sm">
+                {<AiFillStar className="text-yellow-600" />}
+                <p>{product.rating}</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-1 justify-center">
+              <h3 className="font-medium">{product.name}</h3>
+              <p className="text-gray-700 text-xs">{product.description}</p>
             </div>
           </div>
-          <div className="flex flex-col gap-1 justify-center">
-            <h3 className="font-medium">{product.name}</h3>
-            <p className="text-gray-700 text-xs">{product.description}</p>
-          </div>
+
           <p className="items-center flex text-lg">
             <span className="text-gray-800">R$</span>
             {product.price}0
