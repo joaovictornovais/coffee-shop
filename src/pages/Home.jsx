@@ -11,7 +11,7 @@ const Home = () => {
   };
 
   return (
-    <div className="p-4 container mx-auto space-y-4">
+    <div className="p-4 container mx-auto space-y-4 bg-gray-50">
       <Searchbar searchToFilters={searchToFilters} />
       <Promotions searchToFilters={data} />
       <Filters searchToFilters={data} />

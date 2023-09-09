@@ -11,7 +11,7 @@ const Filters = ({ searchToFilters }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="grid grid-cols-3 text-center text-xl">
+      <div className="grid grid-cols-3 text-center text">
         <div
           onClick={() => setSection("Coffee")}
           className={
