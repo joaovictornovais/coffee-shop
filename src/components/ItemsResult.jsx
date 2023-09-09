@@ -132,7 +132,7 @@ const ItemsResult = ({ section, filter }) => {
           </div>
 
           <p className="items-center flex">
-            R${product.price}0
+            R${product.price.toString().replace('.', ',')}0
           </p>
         </div>
       ))}
