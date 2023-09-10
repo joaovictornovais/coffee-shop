@@ -65,9 +65,9 @@ const Filters = ({ searchToFilters }) => {
         </div>
       </div>
       <div className="flex gap-1">
-        <FilterButton icon={<AiOutlineStar />} filter={"Rating 4.5+"} />
-        <FilterButton icon={<MdAttachMoney />} filter={"Preço"} />
-        <FilterButton icon={<HiOutlineSpeakerphone />} filter={"Promoções"} />
+        <FilterButton icon={<AiOutlineStar />} filter={"Rating 4.5+"} isActive={true}/>
+        <FilterButton icon={<MdAttachMoney />} filter={"Preço"} isActive={false} />
+        <FilterButton icon={<HiOutlineSpeakerphone />} filter={"Promoções"} isActive={false} />
       </div>
       <ItemsResult section={section} filter={searchToFilters} />
     </div>

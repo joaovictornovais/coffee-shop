@@ -115,9 +115,9 @@ const ItemsResult = ({ section, filter }) => {
           className="flex gap-4 bg-gray-50 p-2 justify-between"
         >
           <div className="flex gap-4">
-            <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1">
+            <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 w-[100px] h-[100px]">
               <img
-                className="min-w-[100px] min-h-[100px] p-1"
+                className="max-w-[100px] max-h-[100px] p-2"
                 src={product.image}
               />
               <div className="flex items-center absolute bottom-1 gap-1 font-medium bg-gray-100 p-1 rounded-2xl">
