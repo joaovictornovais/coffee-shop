@@ -9,6 +9,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Coffee",
       image: "src/assets/products/coffee/1.svg",
       price: 6.9,
+      isPromotion: true,
+      promoPrice: 5.0,
       rating: 4.9,
     },
     {
@@ -18,6 +20,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Coffee",
       image: "src/assets/products/coffee/2.svg",
       price: 14.9,
+      isPromotion: true,
+      promoPrice: 10.43,
       rating: 4.6,
     },
     {
@@ -28,6 +32,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Coffee",
       image: "src/assets/products/coffee/3.svg",
       price: 16.9,
+      isPromotion: false,
+      promoPrice: 0.0,
       rating: 4.4,
     },
     {
@@ -37,6 +43,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Coffee",
       image: "src/assets/products/coffee/4.svg",
       price: 12.9,
+      isPromotion: true,
+      promoPrice: 11.60,
       rating: 4.7,
     },
     {
@@ -46,6 +54,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Coffee",
       image: "src/assets/products/coffee/5.svg",
       price: 9.9,
+      isPromotion: false,
+      promoPrice: 0.0,
       rating: 4.8,
     },
     {
@@ -56,6 +66,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Drinks",
       image: "src/assets/products/drinks/1.png",
       price: 4.9,
+      isPromotion: false,
+      promoPrice: 0.0,
       rating: 4.8,
     },
     {
@@ -66,17 +78,9 @@ const ItemsResult = ({ section, filter }) => {
       category: "Drinks",
       image: "src/assets/products/drinks/2.png",
       price: 4.8,
+      isPromotion: false,
+      promoPrice: 0.0,
       rating: 4.7,
-    },
-    {
-      id: 8,
-      name: "Guaraná Antartica 2L",
-      description:
-        "Uma garrafa de guaraná Antarctica 2 litros pode render diversas possibilidades de drinks para você aproveitar o melhor do verão sem nem precisar sair de casa. ",
-      category: "Drinks",
-      image: "src/assets/products/drinks/3.png",
-      price: 8.5,
-      rating: 4,
     },
     {
       id: 9,
@@ -85,6 +89,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Drinks",
       image: "src/assets/products/drinks/4.png",
       price: 2.8,
+      isPromotion: true,
+      promoPrice: 1.96,
       rating: 4.4,
     },
     {
@@ -94,6 +100,8 @@ const ItemsResult = ({ section, filter }) => {
       category: "Pastry",
       image: "src/assets/products/foods/1.png",
       price: 4.9,
+      isPromotion: false,
+      promoPrice: 0.0,
       rating: 4.7,
     },
   ];
@@ -115,9 +123,9 @@ const ItemsResult = ({ section, filter }) => {
           className="flex gap-4 bg-gray-50 p-2 justify-between"
         >
           <div className="flex gap-4">
-            <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 w-[100px] h-[100px]">
+            <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 min-w-[100px] min-h-[100px]">
               <img
-                className="max-w-[100px] max-h-[100px] p-2"
+                className="max-w-[100px] max-h-[100px] p-1"
                 src={product.image}
               />
               <div className="flex items-center absolute bottom-1 gap-1 font-medium bg-gray-100 p-1 rounded-2xl">
@@ -130,10 +138,14 @@ const ItemsResult = ({ section, filter }) => {
               <p className="text-gray-800 text-xs">{product.description}</p>
             </div>
           </div>
-
-          <p className="items-center flex">
-            R${product.price.toString().replace('.', ',')}0
-          </p>
+          <div className='flex flex-col justify-center'>
+            <p className={product.isPromotion ? 'inline' : 'hidden'}>
+              R${product.promoPrice.toString().replace('.', ',')}
+            </p>
+            <p className={!product.isPromotion ? 'items-center flex' : 'items-center flex text-gray-500 line-through'}>
+              R${product.price.toString().replace('.', ',')}0
+            </p>
+          </div>
         </div>
       ))}
     </div>
