@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { AiFillStar } from "react-icons/ai";
-const ItemsResult = ({ section, filter }) => {
+const ItemsResult = ({ section, filter, filterButton }) => {
   const products = [
     {
       id: 1,
@@ -32,7 +32,7 @@ const ItemsResult = ({ section, filter }) => {
       category: "Coffee",
       image: "src/assets/products/coffee/3.svg",
       price: 16.99,
-      isPromotion: false,
+      isPromotion: true,
       promoPrice: 12.89,
       rating: 4.4,
     },
@@ -106,7 +106,7 @@ const ItemsResult = ({ section, filter }) => {
     },
   ];
 
-  const sectionFilter = products.filter((product) => {
+  const inputFilter = products.filter((product) => {
     const name = product.name
       .toLowerCase()
       .includes(filter.toLowerCase().trim());
@@ -115,9 +115,16 @@ const ItemsResult = ({ section, filter }) => {
     else return category;
   });
 
+  const buttonResult = inputFilter.filter((button) => {
+    return filterButton.every((filter) => {
+      if (filter === "Rating 4.5+") return button.rating > 4.5;
+      else if (filter === "Promotions") return button.isPromotion === true;
+    });
+  });
+
   return (
     <div className="flex flex-col gap-4">
-      {sectionFilter.map((product) => (
+      {buttonResult.map((product) => (
         <div
           key={product.id}
           className="flex gap-4 bg-gray-50 p-2 justify-between border-b-2 rounded-xl"
