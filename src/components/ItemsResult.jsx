@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { AiFillStar } from "react-icons/ai";
-const ItemsResult = ({ section, filter, filterButton }) => {
+const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
   const products = [
     {
       id: 1,
@@ -115,7 +115,13 @@ const ItemsResult = ({ section, filter, filterButton }) => {
     else return category;
   });
 
-  const buttonResult = inputFilter.filter((button) => {
+  const priceResult = inputFilter.slice().sort((buttonA, buttonB) => {
+    if (filterPrice === "up") return buttonA.price - buttonB.price;
+    else if (filterPrice === "down") return buttonB.price - buttonA.price;
+    else return 0;
+  });
+
+  const buttonResult = priceResult.filter((button) => {
     return filterButton.every((filter) => {
       if (filter === "Rating 4.5+") return button.rating > 4.5;
       else if (filter === "Promotions") return button.isPromotion === true;

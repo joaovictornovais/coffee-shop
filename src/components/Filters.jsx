@@ -1,18 +1,31 @@
 /* eslint-disable react/prop-types */
-import { AiOutlineStar } from "react-icons/ai";
+import ItemsResult from "./ItemsResult";
+
+import { useState } from "react";
+
+import {
+  AiOutlineStar,
+  AiOutlineArrowUp,
+  AiOutlineArrowDown,
+} from "react-icons/ai";
 import { MdAttachMoney } from "react-icons/md";
 import { HiOutlineSpeakerphone } from "react-icons/hi";
-import ItemsResult from "./ItemsResult";
-import { useState } from "react";
 
 const Filters = ({ searchToFilters }) => {
   const [section, setSection] = useState("Coffee");
   const [filterButton, setFilterButton] = useState([]);
+  const [filterPrice, setFilterPrice] = useState("position");
 
   const toggleFilters = (filter) => {
     if (filterButton.includes(filter))
       setFilterButton(filterButton.filter((n) => n !== filter));
     else setFilterButton([...filterButton, filter]);
+  };
+
+  const toggleFilterPrice = () => {
+    if (filterPrice === "position") setFilterPrice("up");
+    else if (filterPrice === "up") setFilterPrice("down");
+    else setFilterPrice("position");
   };
 
   return (
@@ -84,17 +97,6 @@ const Filters = ({ searchToFilters }) => {
         </button>
         <button
           className={
-            filterButton.includes("Price")
-              ? "filter-button bg-brown-800 text-gray-100"
-              : "filter-button bg-gray-200 text-brown-800"
-          }
-          onClick={() => toggleFilters("Price")}
-        >
-          <MdAttachMoney />
-          <p>Preço</p>
-        </button>
-        <button
-          className={
             filterButton.includes("Promotions")
               ? "filter-button bg-brown-800 text-gray-100"
               : "filter-button bg-gray-200 text-brown-800"
@@ -104,11 +106,30 @@ const Filters = ({ searchToFilters }) => {
           <HiOutlineSpeakerphone />
           <p>Promoções</p>
         </button>
+        <button
+          className={
+            filterPrice === "position"
+              ? "filter-button bg-gray-200"
+              : "filter-button bg-brown-800 text-gray-200"
+          }
+          onClick={toggleFilterPrice}
+        >
+          <MdAttachMoney />
+          <p>Preço</p>
+          {filterPrice === "position" ? (
+            ""
+          ) : filterPrice === "up" ? (
+            <AiOutlineArrowUp />
+          ) : (
+            <AiOutlineArrowDown />
+          )}
+        </button>
       </div>
       <ItemsResult
         section={section}
         filter={searchToFilters}
         filterButton={filterButton}
+        filterPrice={filterPrice}
       />
     </div>
   );
