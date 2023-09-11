@@ -7,3 +7,27 @@
     font-family: "Poppins";
   }
 }
+
+.selected-section {
+  @apply space-y-2 text-brown-800;
+}
+
+.unselected-section {
+  @apply space-y-2 text-brown-200;
+}
+
+.selected-section-border {
+  @apply border-[2px] border-brown-800;
+}
+
+.unselected-section-border {
+  @apply border-[2px] border-brown-200;
+}
+
+.filter-button {
+  @apply py-2.5 px-2 rounded-2xl text-sm font-medium flex gap-1 items-center;
+}
+
+.promotion-img {
+  @apply h-full w-full object-cover;
+}

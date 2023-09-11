@@ -16,16 +16,16 @@ const Filters = ({ searchToFilters }) => {
           onClick={() => setSection("Coffee")}
           className={
             section === "Coffee" || searchToFilters !== ""
-              ? "space-y-2 text-brown-800"
-              : "space-y-2 text-brown-200"
+              ? "selected-section"
+              : "unselected-section"
           }
         >
           <p>Café</p>
           <div
             className={
               section === "Coffee" || searchToFilters !== ""
-                ? "border-[2px] border-brown-800"
-                : "border-[2px] border-brown-200"
+                ? "selected-section-border"
+                : "unselected-section-border"
             }
           />
         </div>
@@ -33,16 +33,16 @@ const Filters = ({ searchToFilters }) => {
           onClick={() => setSection("Drinks")}
           className={
             section === "Drinks" || searchToFilters !== ""
-              ? "space-y-2 text-brown-800"
-              : "space-y-2 text-brown-200"
+              ? "selected-section"
+              : "unselected-section"
           }
         >
           <p>Bebidas</p>
           <div
             className={
               section === "Drinks" || searchToFilters !== ""
-                ? "border-[2px] border-brown-800"
-                : "border-[2px] border-brown-200"
+                ? "selected-section-border"
+                : "unselected-section-border"
             }
           />
         </div>
@@ -50,24 +50,36 @@ const Filters = ({ searchToFilters }) => {
           onClick={() => setSection("Pastry")}
           className={
             section === "Pastry" || searchToFilters !== ""
-              ? "space-y-2 text-brown-800"
-              : "space-y-2 text-brown-200"
+              ? "selected-section"
+              : "unselected-section"
           }
         >
           <p>Pastelaria</p>
           <div
             className={
               section === "Pastry" || searchToFilters !== ""
-                ? "border-[2px] border-brown-800"
-                : "border-[2px] border-brown-200"
+                ? "selected-section-border"
+                : "unselected-section-border"
             }
           />
         </div>
       </div>
       <div className="flex gap-1">
-        <FilterButton icon={<AiOutlineStar />} filter={"Rating 4.5+"} isActive={true}/>
-        <FilterButton icon={<MdAttachMoney />} filter={"Preço"} isActive={false} />
-        <FilterButton icon={<HiOutlineSpeakerphone />} filter={"Promoções"} isActive={false} />
+        <FilterButton
+          icon={<AiOutlineStar />}
+          filter={"Rating 4.5+"}
+          isActive={true}
+        />
+        <FilterButton
+          icon={<MdAttachMoney />}
+          filter={"Preço"}
+          isActive={true}
+        />
+        <FilterButton
+          icon={<HiOutlineSpeakerphone />}
+          filter={"Promoções"}
+          isActive={false}
+        />
       </div>
       <ItemsResult section={section} filter={searchToFilters} />
     </div>

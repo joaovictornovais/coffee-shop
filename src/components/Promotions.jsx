@@ -2,6 +2,21 @@
 import { Carousel } from "@material-tailwind/react";
 
 const Promotions = ({ searchToFilters }) => {
+  const promotions = [
+    {
+      id: 1,
+      img: "src/assets/promotions/promo-1.svg",
+    },
+    {
+      id: 2,
+      img: "src/assets/promotions/promo-2.svg",
+    },
+    {
+      id: 3,
+      img: "src/assets/promotions/promo-3.svg",
+    },
+  ];
+
   return (
     <Carousel
       className={searchToFilters !== "" ? "hidden" : "rounded-xl"}
@@ -9,19 +24,9 @@ const Promotions = ({ searchToFilters }) => {
       autoplay={true}
       loop={true}
     >
-      <img
-        src="src/assets/promotions/promo-1.svg"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="src/assets/promotions/promo-2.svg"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="src/assets/promotions/promo-3.svg"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
+      {promotions.map((promotion) => (
+        <img key={promotion.id} src={promotion.img} className="promotion-img" />
+      ))}
     </Carousel>
   );
 };

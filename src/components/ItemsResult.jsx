@@ -8,9 +8,9 @@ const ItemsResult = ({ section, filter }) => {
       description: "O bom e velho café com leite",
       category: "Coffee",
       image: "src/assets/products/coffee/1.svg",
-      price: 6.9,
+      price: 6.99,
       isPromotion: true,
-      promoPrice: 5.0,
+      promoPrice: 4.99,
       rating: 4.9,
     },
     {
@@ -19,7 +19,7 @@ const ItemsResult = ({ section, filter }) => {
       description: "Leite vaporizado com mocha e cobertura de caramelo ",
       category: "Coffee",
       image: "src/assets/products/coffee/2.svg",
-      price: 14.9,
+      price: 14.99,
       isPromotion: true,
       promoPrice: 10.43,
       rating: 4.6,
@@ -31,9 +31,9 @@ const ItemsResult = ({ section, filter }) => {
         "Café preparado com nitrogênio, sem açúcar e creme aveludado",
       category: "Coffee",
       image: "src/assets/products/coffee/3.svg",
-      price: 16.9,
+      price: 16.99,
       isPromotion: false,
-      promoPrice: 0.0,
+      promoPrice: 12.89,
       rating: 4.4,
     },
     {
@@ -42,9 +42,9 @@ const ItemsResult = ({ section, filter }) => {
       description: "Café expresso com cobertura mocha, leite e creme batido",
       category: "Coffee",
       image: "src/assets/products/coffee/4.svg",
-      price: 12.9,
+      price: 12.99,
       isPromotion: true,
-      promoPrice: 11.60,
+      promoPrice: 11.6,
       rating: 4.7,
     },
     {
@@ -53,9 +53,9 @@ const ItemsResult = ({ section, filter }) => {
       description: "Café expresso, leite fresco e caramelo",
       category: "Coffee",
       image: "src/assets/products/coffee/5.svg",
-      price: 9.9,
+      price: 9.99,
       isPromotion: false,
-      promoPrice: 0.0,
+      promoPrice: 7.89,
       rating: 4.8,
     },
     {
@@ -65,9 +65,9 @@ const ItemsResult = ({ section, filter }) => {
         "Com a tradição e o gosto incomparável, ela se torna a melhor opção de refresco em qualquer momento. ",
       category: "Drinks",
       image: "src/assets/products/drinks/1.png",
-      price: 4.9,
+      price: 4.99,
       isPromotion: false,
-      promoPrice: 0.0,
+      promoPrice: 3.89,
       rating: 4.8,
     },
     {
@@ -77,9 +77,9 @@ const ItemsResult = ({ section, filter }) => {
         "A Pepsi Lata 350ml é um refrigerante de cola com aroma natural, apreciada pelo sabor suave e refrescante. ",
       category: "Drinks",
       image: "src/assets/products/drinks/2.png",
-      price: 4.8,
+      price: 4.89,
       isPromotion: false,
-      promoPrice: 0.0,
+      promoPrice: 4.29,
       rating: 4.7,
     },
     {
@@ -88,7 +88,7 @@ const ItemsResult = ({ section, filter }) => {
       description: "Uma opção nutritiva e gostosa para seus filhos.",
       category: "Drinks",
       image: "src/assets/products/drinks/4.png",
-      price: 2.8,
+      price: 2.89,
       isPromotion: true,
       promoPrice: 1.96,
       rating: 4.4,
@@ -99,9 +99,9 @@ const ItemsResult = ({ section, filter }) => {
       description: "O clássico pão francês.",
       category: "Pastry",
       image: "src/assets/products/foods/1.png",
-      price: 4.9,
+      price: 4.99,
       isPromotion: false,
-      promoPrice: 0.0,
+      promoPrice: 4.29,
       rating: 4.7,
     },
   ];
@@ -114,7 +114,7 @@ const ItemsResult = ({ section, filter }) => {
     if (filter !== "") return name;
     else return category;
   });
-  console.log(sectionFilter);
+
   return (
     <div className="flex flex-col gap-4">
       {sectionFilter.map((product) => (
@@ -138,12 +138,18 @@ const ItemsResult = ({ section, filter }) => {
               <p className="text-gray-800 text-xs">{product.description}</p>
             </div>
           </div>
-          <div className='flex flex-col justify-center'>
-            <p className={product.isPromotion ? 'inline' : 'hidden'}>
-              R${product.promoPrice.toString().replace('.', ',')}
+          <div className="flex flex-col justify-center">
+            <p className={product.isPromotion ? "inline" : "hidden"}>
+              R${product.promoPrice.toString().replace(".", ",")}
             </p>
-            <p className={!product.isPromotion ? 'items-center flex' : 'items-center flex text-gray-500 line-through'}>
-              R${product.price.toString().replace('.', ',')}0
+            <p
+              className={
+                !product.isPromotion
+                  ? "items-center flex"
+                  : "items-center flex text-gray-500 line-through"
+              }
+            >
+              R${product.price.toString().replace(".", ",")}
             </p>
           </div>
         </div>

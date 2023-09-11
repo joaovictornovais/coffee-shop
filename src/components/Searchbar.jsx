@@ -4,11 +4,11 @@ import { BiSearch, BiBell } from "react-icons/bi";
 const Searchbar = ({ searchToFilters }) => {
   return (
     <div className="flex items-center justify-between">
-      <div className="flex items-center border-2 border-brown-300 p-2 rounded-2xl w-[90%] justify-between bg-gray-50">
+      <div className="flex items-center border-2 border-brown-300 p-2 rounded-2xl w-[90%] justify-between">
         <input
           onChange={(e) => searchToFilters(e.target.value)}
-          className="w-[100%] outline-none p-1 text-sm"
-          placeholder="O que você gostaria de beber hoje?"
+          className="w-[100%] outline-none p-1 text-sm bg-gray-50"
+          placeholder="O que você gostaria de beber?"
         />
         <BiSearch size={24} className="text-brown-300" />
       </div>
