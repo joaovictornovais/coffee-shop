@@ -60,7 +60,7 @@
   id: 11,
   name: "NOME DO PRODUTO",
   description: "UMA DESCRIÇÃO PARA O PRODUTO",
-  category: "CATEGORIA DO PRODUTO" // Coffee, Drink ou Pastry,
+  category: "CATEGORIA DO PRODUTO", // Coffee, Drink ou Pastry
   image: "src/assets/products/CATEGORIA-DO-PRODUTO/NOME-DO-ARQUIVO.png",
   oldPrice: 4.99, // Caso haja promoção, esse preço será mostrado como antigo
   isPromotion: false, // true || false, ele fará com que o produto entre em promoção
