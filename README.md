@@ -33,7 +33,7 @@
 - Rode `yarn dev`
 - Pronto! 🎉
 
-## Tia Rose - Coffee Shop Site
+## Tia Rosa - Coffee Shop Site
 ### Estrutura do projeto
 - `./src/assets` Imagens públicas do site
 - `./src/components` Todos os pedaços primordiais da aplicação
