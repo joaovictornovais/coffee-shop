@@ -120,15 +120,15 @@ const ItemsResult = ({ section, filter }) => {
       {sectionFilter.map((product) => (
         <div
           key={product.id}
-          className="flex gap-4 bg-gray-50 p-2 justify-between"
+          className="flex gap-4 bg-gray-50 p-2 justify-between border-b-2 rounded-xl"
         >
           <div className="flex gap-4">
-            <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 min-w-[100px] min-h-[100px]">
+            <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 w-[70px] h-[70px]">
               <img
-                className="max-w-[100px] max-h-[100px] p-1"
+                className="aspect-[2/2] min-w-[66px] min-h-[69px] p-1"
                 src={product.image}
               />
-              <div className="flex items-center absolute bottom-1 gap-1 font-medium bg-gray-100 p-1 rounded-2xl">
+              <div className="flex items-center absolute bottom-1 gap-1 text-sm font-medium bg-gray-100 p-0.5 rounded-2xl">
                 {<AiFillStar className="text-yellow-600" />}
                 <p>{product.rating}</p>
               </div>
