@@ -10,11 +10,11 @@
 }
 
 .selected-section {
-  @apply space-y-2 text-brown-800;
+  @apply space-y-2 text-brown-800 cursor-pointer;
 }
 
 .unselected-section {
-  @apply space-y-2 text-brown-200;
+  @apply space-y-2 text-brown-200 cursor-pointer;
 }
 
 .selected-section-border {
