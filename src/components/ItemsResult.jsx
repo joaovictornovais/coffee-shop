@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { AiFillStar } from "react-icons/ai";
 import { products } from "../db/Products";
+
 const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
   const inputFilter = products.filter((product) => {
     const name = product.name
@@ -17,7 +18,6 @@ const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
     } else if (filterPrice === "down") {
       return priceB.price - priceA.price;
     } else {
-      // Se filterPrice for "position" ou outro valor não reconhecido, mantenha a ordem original
       return 0;
     }
   });

@@ -1,25 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Carousel } from "@material-tailwind/react";
-
+import { promotions } from "../db/Promotions";
 const Promotions = ({ searchToFilters }) => {
-  const promotions = [
-    {
-      id: 1,
-      img: "src/assets/promotions/promo-1.svg",
-    },
-    {
-      id: 2,
-      img: "src/assets/promotions/promo-2.svg",
-    },
-    {
-      id: 3,
-      img: "src/assets/promotions/promo-3.svg",
-    },
-  ];
-
   return (
     <Carousel
-      className={searchToFilters !== "" ? "hidden" : "rounded-xl"}
+      className={
+        searchToFilters !== "" ? "hidden" : "rounded-xl w-[100%] mx-auto"
+      }
       transition={{ duration: 1 }}
       autoplay={true}
       loop={true}

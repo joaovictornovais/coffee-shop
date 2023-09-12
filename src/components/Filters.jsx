@@ -109,7 +109,7 @@ const Filters = ({ searchToFilters }) => {
         <button
           className={
             filterPrice === "position"
-              ? "filter-button bg-gray-200"
+              ? "filter-button text-brown-800 bg-gray-200"
               : "filter-button bg-brown-800 text-gray-200"
           }
           onClick={toggleFilterPrice}
