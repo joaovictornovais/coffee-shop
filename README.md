@@ -68,3 +68,9 @@
   rating: 4.7, // Avaliações
 },
 ```
+
+## To-do
+### Features que faltam no projeto
+- Informações do produto
+- Carrinho
+- Página de checkout
