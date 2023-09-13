@@ -1,5 +1,5 @@
 <h1 align="center">
-  Coffee Shops - Tia Rosa
+  Coffee Shop - Tia Rosa
 </h1>
 <p align="center">
     <img src="https://img.shields.io/badge/Tipo-Atividade-blue" />
@@ -25,7 +25,7 @@
 
 ## Disclaimer
 
-<p>Utilizei o modelo do figma feito pela <a href="https://www.figma.com/@reee">@reee</a> que pode ser encontrado gratuitamente no Figma Community: "<a href="https://www.figma.com/file/Tn4OMX8Ug9P8vhTZm1Qe4F/Shopfee-(Coffee-Shop)-(Community)?type=design&node-id=510-6021&mode=design&t=jDssXftN7KLFrxjj-0">Shopfee (Coffee Shop)</a>".</p>
+<p>Utilizei o modelo do figma feito pela <a href="https://www.figma.com/@reee">@reee</a> que pode ser encontrado gratuitamente no Figma Community: "<a href="https://www.figma.com/file/Tn4OMX8Ug9P8vhTZm1Qe4F/Shopfee-(Coffee-Shop)-(Community)?type=design&node-id=510-6021&mode=design&t=jDssXftN7KLFrxjj-0">Shopfee (Coffee Shop)</a>" como inspiração para a UI/UX do site.</p>
 
 ## Como rodar na minha máquina?
 - Clone o projeto `git clone git@github.com:joaovictornovais/coffee-shop.git`
@@ -74,3 +74,6 @@
 - Informações do produto
 - Carrinho
 - Página de checkout
+### READMEmd
+- Imagem do produto
+- Fotos do site
