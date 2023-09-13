@@ -32,3 +32,31 @@
 .promotion-img {
   @apply h-full w-full object-cover;
 }
+
+.quantity-button {
+  @apply text-gray-50 bg-brown-800 py-1 px-3;
+}
+
+.product-details-card {
+  @apply px-4 bg-white border-2 border-gray-200 rounded-xl flex flex-col gap-2 py-2;
+}
+
+.checkout-card {
+  @apply px-4 bg-white border-2 border-gray-200 rounded-xl flex gap-2 py-2;
+}
+
+.product-category {
+  @apply text-brown-800 font-medium text-sm;
+}
+
+.customize-selected-button {
+  @apply rounded-xl bg-brown-800 text-brown-50 text-xs px-2 py-3 font-semibold border-2 border-brown-800;
+}
+
+.customize-unselected-button {
+  @apply rounded-xl bg-gray-50 text-brown-800 text-xs px-2 py-3 font-semibold border-2 border-brown-800;
+}
+
+.flex-between-center {
+  @apply flex justify-between items-center;
+}

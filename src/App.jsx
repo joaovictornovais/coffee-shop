@@ -2,6 +2,7 @@ import { useState } from "react";
 import Searchbar from "./components/Searchbar";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductDetails from "./components/ProductDetails";
 
 const App = () => {
   const [data, setData] = useState("");
@@ -15,6 +16,7 @@ const App = () => {
         <Searchbar searchToFilters={searchToFilters} />
         <Routes>
           <Route path="/" element={<Home data={data} />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </div>
     </Router>
