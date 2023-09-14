@@ -197,7 +197,7 @@ const ProductDetails = () => {
                 .replace(".", ",")}
             </span>
           </div>
-          <Link to="/">
+          <Link to="/checkout">
             <button
               className="customize-selected-button"
               onClick={() =>

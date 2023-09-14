@@ -33,7 +33,7 @@ const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
   return (
     <div className="flex flex-col gap-4">
       {buttonResult.map((product) => (
-        <Link to={`/product/${product.id}`} key={product.id}>
+        <Link to={`/products/${product.id}`} key={product.id}>
           <div className="flex gap-4 bg-gray-50 p-2 justify-between border-b-2 rounded-xl">
             <div className="flex gap-4">
               <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 w-[70px] h-[70px]">
@@ -53,7 +53,7 @@ const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
             </div>
             <div className="flex flex-col justify-center">
               <p className={product.isPromotion ? "inline" : "hidden"}>
-                R${product.price.toString().replace(".", ",")}
+                R${product.price.toFixed(2).toString().replace(".", ",")}
               </p>
               <p
                 className={
@@ -62,7 +62,7 @@ const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
                     : "items-center flex text-gray-500 line-through"
                 }
               >
-                R${product.oldPrice.toString().replace(".", ",")}
+                R${product.oldPrice.toFixed(2).toString().replace(".", ",")}
               </p>
             </div>
           </div>

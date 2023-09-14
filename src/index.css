@@ -60,3 +60,11 @@
 .flex-between-center {
   @apply flex justify-between items-center;
 }
+
+.order-questions {
+  @apply flex justify-between items-center border-b-2 p-1;
+}
+
+.checkout-section {
+  @apply bg-white p-4 flex flex-col gap-8;
+}

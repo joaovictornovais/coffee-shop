@@ -3,6 +3,7 @@ import Searchbar from "./components/Searchbar";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductDetails from "./pages/ProductDetails";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   const [data, setData] = useState("");
@@ -16,7 +17,8 @@ const App = () => {
         <Searchbar searchToFilters={searchToFilters} />
         <Routes>
           <Route path="/" element={<Home data={data} />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
     </Router>
