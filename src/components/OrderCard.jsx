@@ -4,13 +4,12 @@ import { BsTrash3 } from "react-icons/bs";
 import { IoIosArrowBack } from "react-icons/io";
 import NavigationMenu from "./NavigationMenu";
 import QuantityButton from "./QuantityButton";
+import { cart } from "../db/Cart";
 
 const OrderCard = () => {
-  const product = products.filter((product) => product.id === 1);
-
   return (
     <div className="checkout-section">
-      {product.map((product) => (
+      {cart.map((product) => (
         <div key={product.id} className="flex gap-2 text-gray-600">
           <img src={product.image} />
           <div className="flex flex-col w-full gap-3">
@@ -27,7 +26,7 @@ const OrderCard = () => {
               </div>
               <div className="min-w-[30%] flex flex-col items-end justify-center">
                 <h2 className="text-gray-800 font-semibold text-lg">
-                  R$ {product.price}
+                  R$ {product.total}
                 </h2>
                 <span>x1</span>
               </div>

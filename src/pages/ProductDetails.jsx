@@ -15,10 +15,12 @@ const ProductDetails = () => {
 
   const [quantity, setQuantity] = useState(1);
 
-  const [variant, setVariant] = useState();
-  const [size, setSize] = useState();
-  const [sugar, setSugar] = useState();
-  const [ice, setIce] = useState();
+  const [variant, setVariant] = useState("Quente");
+  const [size, setSize] = useState("Pequeno");
+  const [sugar, setSugar] = useState(true);
+  const [ice, setIce] = useState(false);
+
+  const [total, setTotal] = useState();
 
   const handleQuantity = (operation) => {
     if (operation === "+") setQuantity(quantity + 1);
@@ -26,8 +28,8 @@ const ProductDetails = () => {
   };
 
   const handleSubtotal = (size) => {
-    if (size === "regular") return 1;
-    else if (size === "medium") return 1.15;
+    if (size === "Pequeno") return 1;
+    else if (size === "Médio") return 1.15;
     else return 1.21;
   };
 
@@ -46,18 +48,21 @@ const ProductDetails = () => {
   const addToCart = () => {
     const order = {
       id: uuidv4(),
-      productName: product.name,
+      name: product.name,
+      image: product.image,
       observations: handleDescription(),
       quantity: quantity,
-      total: product.price * quantity,
+      total: handleTotal(),
     };
     addProductToCart(order);
-    console.log(cart);
   };
 
-  useEffect(() => {
-    addToCart();
-  }, []);
+  const handleTotal = () => {
+    return (handleSubtotal(size) * product.price * quantity)
+      .toFixed(2)
+      .toString()
+      .replace(".", ",");
+  };
 
   return (
     <div key={product.id} className="flex flex-col gap-2">
@@ -71,7 +76,7 @@ const ProductDetails = () => {
             <h2 className="product-category">{product.category}</h2>
             <div className="flex justify-between text-gray-900 font-medium text-xl">
               <h1>{product.name}</h1>
-              <p>R${(product.price * handleSubtotal(size)).toFixed(2)}</p>
+              <p>R${product.price}</p>
             </div>
           </div>
 
@@ -196,10 +201,7 @@ const ProductDetails = () => {
           <div className="flex flex-col py-1">
             <p>Total</p>
             <span className="font-semibold text-gray-800 text-xl">
-              R${" "}
-              {(handleSubtotal(size) * product.price * quantity)
-                .toFixed(2)
-                .replace(".", ",")}
+              R$ {handleTotal()}
             </span>
           </div>
           <Link to="/checkout">
