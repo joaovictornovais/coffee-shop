@@ -39,13 +39,6 @@ const OrderQuestions = ({ section, setSection }) => {
           </div>
           <IoIosArrowForward />
         </div>
-        <div className="flex justify-between items-center border-b-2 p-1">
-          <div className="flex flex-col">
-            <h5 className="text-gray-800 font-semibold">Cupom de desconto</h5>
-            <span className="text-sm">Nenhum cupom adicionado</span>
-          </div>
-          <IoIosArrowForward />
-        </div>
       </div>
       <div className={section === "payment" ? "p-2" : "hidden"}>
         <div className="flex flex-col justify-between">
@@ -80,18 +73,18 @@ const OrderQuestions = ({ section, setSection }) => {
               />
             </div>
           ))}
-          <div className="flex justify-end">
-            <button
-              onClick={() => setSection("checkout")}
-              className={
-                method === ""
-                  ? "customize-unselected-button"
-                  : "customize-selected-button"
-              }
-            >
-              Confirmar
-            </button>
-          </div>
+        </div>
+        <div className="flex justify-end">
+          <button
+            onClick={() => setSection("checkout")}
+            className={
+              method === ""
+                ? "customize-unselected-button"
+                : "customize-selected-button"
+            }
+          >
+            Confirmar
+          </button>
         </div>
       </div>
     </div>
