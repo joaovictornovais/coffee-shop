@@ -1,12 +1,10 @@
 import { Link, useParams } from "react-router-dom";
-import {
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-  AiFillStar,
-} from "react-icons/ai";
+import { AiOutlineArrowRight, AiFillStar } from "react-icons/ai";
 import { products } from "../db/Products";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import NavigationMenu from "../components/NavigationMenu";
+import Button from "../components/Button";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -57,15 +55,10 @@ const ProductDetails = () => {
   }, []);
 
   return product.map((prod) => (
-    <div key={prod.id}>
-      <div className="flex gap-6 items-center">
-        <Link to="/">
-          <AiOutlineArrowLeft />
-        </Link>
-        <h2>Customizar pedido</h2>
-      </div>
-      <div className="h-[350px] bg-brown-100 flex justify-center p-8">
-        <img className="max-h-[220px]" src={prod.image} alt="prod" />
+    <div key={prod.id} className="flex flex-col gap-2">
+      <NavigationMenu link="/" title="Customizar pedido" />
+      <div className="max-h-[300px] bg-brown-100 flex justify-center p-8">
+        <img className="h-[270px]" src={prod.image} alt="prod" />
       </div>
       <div className="w-[90%] mx-auto flex flex-col gap-2">
         <div className="product-details-card">
@@ -121,111 +114,75 @@ const ProductDetails = () => {
             <div className="flex-between-center">
               <span className="text-gray-900 text-sm">Variação</span>
               <div className="flex gap-2">
-                <button
-                  className={
-                    variant === "hot"
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setVariant("hot")}
-                >
-                  Quente
-                </button>
-                <button
-                  className={
-                    variant === "ice"
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setVariant("ice")}
-                >
-                  Gelado
-                </button>
+                <Button
+                  value={variant}
+                  result={"hot"}
+                  setValue={setVariant}
+                  text="Quente"
+                />
+                <Button
+                  value={variant}
+                  result={"ice"}
+                  setValue={setVariant}
+                  text="Gelado"
+                />
               </div>
             </div>
             <div className="flex-between-center">
               <span className="text-gray-900 text-sm">Tamanho</span>
               <div className="flex gap-2">
-                <button
-                  className={
-                    size === "regular"
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setSize("regular")}
-                >
-                  Pequeno
-                </button>
-                <button
-                  className={
-                    size === "medium"
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setSize("medium")}
-                >
-                  Médio
-                </button>
-                <button
-                  className={
-                    size === "large"
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setSize("large")}
-                >
-                  Grande
-                </button>
+                <Button
+                  value={size}
+                  result={"regular"}
+                  setValue={setSize}
+                  text="Pequeno"
+                />
+                <Button
+                  value={size}
+                  result={"medium"}
+                  setValue={setSize}
+                  text="Médio"
+                />
+                <Button
+                  value={size}
+                  result={"large"}
+                  setValue={setSize}
+                  text="Grande"
+                />
               </div>
             </div>
             <div className="flex-between-center">
               <span className="text-gray-900 text-sm">Açúcar</span>
               <div className="flex gap-2">
-                <button
-                  className={
-                    sugar === true
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setSugar(true)}
-                >
-                  Adicionar
-                </button>
-                <button
-                  className={
-                    sugar === false
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setSugar(false)}
-                >
-                  Remover
-                </button>
+                <Button
+                  value={sugar}
+                  result={true}
+                  setValue={setSugar}
+                  text="Adicionar"
+                />
+                <Button
+                  value={sugar}
+                  result={false}
+                  setValue={setSugar}
+                  text="Remover"
+                />
               </div>
             </div>
             <div className="flex-between-center">
               <span className="text-gray-900 text-sm">Gelo</span>
               <div className="flex gap-2">
-                <button
-                  className={
-                    ice === true
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setIce(true)}
-                >
-                  Adicionar
-                </button>
-                <button
-                  className={
-                    ice === false
-                      ? "customize-selected-button"
-                      : "customize-unselected-button"
-                  }
-                  onClick={() => setIce(false)}
-                >
-                  Remover
-                </button>
+                <Button
+                  value={ice}
+                  result={true}
+                  setValue={setIce}
+                  text="Adicionar"
+                />
+                <Button
+                  value={ice}
+                  result={false}
+                  setValue={setIce}
+                  text="Remover"
+                />
               </div>
             </div>
           </div>

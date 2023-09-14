@@ -2,7 +2,7 @@ import { useState } from "react";
 import Searchbar from "./components/Searchbar";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductDetails from "./components/ProductDetails";
+import ProductDetails from "./pages/ProductDetails";
 
 const App = () => {
   const [data, setData] = useState("");
