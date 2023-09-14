@@ -28,7 +28,7 @@ const OrderQuestions = ({ section, setSection }) => {
             </h5>
             <span className="text-sm">Agora - 10 minutos</span>
           </div>
-          <input type="radio" id="now" name="delivery" value="now" checked />
+          <input type="radio" id="now" name="delivery" value="now" />
         </div>
         <div className="order-questions" onClick={() => setSection("payment")}>
           <div className="flex flex-col">
