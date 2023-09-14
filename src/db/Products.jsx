@@ -5,9 +5,9 @@ export const products = [
     description: "O bom e velho café com leite",
     category: "Coffee",
     image: "/src/assets/products/coffee/1.svg",
-    oldPrice: 6.99,
+    oldPrice: 2.99,
     isPromotion: true,
-    price: 4.99,
+    price: 1.99,
     rating: 4.9,
   },
   {

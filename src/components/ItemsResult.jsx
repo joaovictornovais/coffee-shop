@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { AiFillStar } from "react-icons/ai";
 import { products } from "../db/Products";
+import { Link } from "react-router-dom";
 
 const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
   const inputFilter = products.filter((product) => {
@@ -32,41 +33,40 @@ const ItemsResult = ({ section, filter, filterButton, filterPrice }) => {
   return (
     <div className="flex flex-col gap-4">
       {buttonResult.map((product) => (
-        <div
-          key={product.id}
-          className="flex gap-4 bg-gray-50 p-2 justify-between border-b-2 rounded-xl"
-        >
-          <div className="flex gap-4">
-            <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 w-[70px] h-[70px]">
-              <img
-                className="aspect-[2/2] min-w-[66px] min-h-[69px] p-1"
-                src={product.image}
-              />
-              <div className="flex items-center absolute bottom-1 gap-1 text-sm font-medium bg-gray-100 p-0.5 rounded-2xl">
-                {<AiFillStar className="text-yellow-600" />}
-                <p>{product.rating}</p>
+        <Link to={`/product/${product.id}`} key={product.id}>
+          <div className="flex gap-4 bg-gray-50 p-2 justify-between border-b-2 rounded-xl">
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center rounded-full bg-gray-200 relative p-1 w-[70px] h-[70px]">
+                <img
+                  className="aspect-[2/2] min-w-[66px] min-h-[69px] p-1"
+                  src={product.image}
+                />
+                <div className="flex items-center absolute bottom-1 gap-1 text-sm font-medium bg-gray-100 p-0.5 rounded-2xl">
+                  {<AiFillStar className="text-yellow-600" />}
+                  <p>{product.rating}</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-1 justify-center">
+                <h3 className="font-bold text-sm">{product.name}</h3>
+                <p className="text-gray-800 text-xs">{product.description}</p>
               </div>
             </div>
-            <div className="flex flex-col gap-1 justify-center">
-              <h3 className="font-bold text-sm">{product.name}</h3>
-              <p className="text-gray-800 text-xs">{product.description}</p>
+            <div className="flex flex-col justify-center">
+              <p className={product.isPromotion ? "inline" : "hidden"}>
+                R${product.price.toString().replace(".", ",")}
+              </p>
+              <p
+                className={
+                  !product.isPromotion
+                    ? "items-center flex"
+                    : "items-center flex text-gray-500 line-through"
+                }
+              >
+                R${product.oldPrice.toString().replace(".", ",")}
+              </p>
             </div>
           </div>
-          <div className="flex flex-col justify-center">
-            <p className={product.isPromotion ? "inline" : "hidden"}>
-              R${product.price.toString().replace(".", ",")}
-            </p>
-            <p
-              className={
-                !product.isPromotion
-                  ? "items-center flex"
-                  : "items-center flex text-gray-500 line-through"
-              }
-            >
-              R${product.oldPrice.toString().replace(".", ",")}
-            </p>
-          </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

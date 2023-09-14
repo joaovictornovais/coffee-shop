@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   AiOutlineArrowLeft,
   AiOutlineArrowRight,
   AiFillStar,
 } from "react-icons/ai";
 import { products } from "../db/Products";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -16,20 +17,51 @@ const ProductDetails = () => {
 
   const [quantity, setQuantity] = useState(1);
 
-  const [variant, setVariant] = useState("ice");
-  const [size, setSize] = useState("regular");
-  const [sugar, setSugar] = useState(true);
-  const [ice, setIce] = useState(false);
+  const [variant, setVariant] = useState("");
+  const [size, setSize] = useState("");
+  const [sugar, setSugar] = useState();
+  const [ice, setIce] = useState();
 
   const handleQuantity = (operation) => {
     if (operation === "+") setQuantity(quantity + 1);
     else if (operation === "-" && quantity > 1) setQuantity(quantity - 1);
   };
 
+  const handleSubtotal = (size) => {
+    if (size === "regular") return 1;
+    else if (size === "medium") return 1.15;
+    else return 1.21;
+  };
+
+  const addToCart = (id, price, name, category) => {
+    const order = [
+      {
+        id: uuidv4(),
+        productId: id,
+        price: price,
+        quantity: quantity,
+        productName: name,
+        productCategory: category,
+        variant: variant,
+        size: size,
+        sugar: sugar,
+        ice: ice,
+        total: (handleSubtotal(size) * price).toFixed(2),
+      },
+    ];
+    console.log(order);
+  };
+
+  useEffect(() => {
+    addToCart();
+  }, []);
+
   return product.map((prod) => (
     <div key={prod.id}>
       <div className="flex gap-6 items-center">
-        <AiOutlineArrowLeft />
+        <Link to="/">
+          <AiOutlineArrowLeft />
+        </Link>
         <h2>Customizar pedido</h2>
       </div>
       <div className="h-[350px] bg-brown-100 flex justify-center p-8">
@@ -41,7 +73,7 @@ const ProductDetails = () => {
             <h2 className="product-category">{prod.category}</h2>
             <div className="flex justify-between text-gray-900 font-medium text-xl">
               <h1>{prod.name}</h1>
-              <p>R${prod.price}</p>
+              <p>R${(prod.price * handleSubtotal(size)).toFixed(2)}</p>
             </div>
           </div>
 
@@ -79,7 +111,11 @@ const ProductDetails = () => {
             <AiOutlineArrowRight />
           </div>
         </div>
-        <div className="product-details-card">
+        <div
+          className={
+            prod.category === "Coffee" ? "product-details-card" : "hidden"
+          }
+        >
           <h2 className="font-bold text-gray-900">Customizar</h2>
           <div className="flex flex-col gap-4">
             <div className="flex-between-center">
@@ -198,12 +234,22 @@ const ProductDetails = () => {
           <div className="flex flex-col py-1">
             <p>Total</p>
             <span className="font-semibold text-gray-800 text-xl">
-              R$ {(prod.price * quantity).toFixed(2).replace(".", ",")}
+              R${" "}
+              {(handleSubtotal(size) * prod.price * quantity)
+                .toFixed(2)
+                .replace(".", ",")}
             </span>
           </div>
-          <button className="customize-selected-button">
-            Adicionar ao Carrinho
-          </button>
+          <Link to="/">
+            <button
+              className="customize-selected-button"
+              onClick={() =>
+                addToCart(prod.id, prod.price, prod.name, prod.category)
+              }
+            >
+              Adicionar ao Carrinho
+            </button>
+          </Link>
         </div>
       </div>
     </div>
