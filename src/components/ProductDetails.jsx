@@ -33,11 +33,7 @@ const ProductDetails = () => {
         <h2>Customizar pedido</h2>
       </div>
       <div className="h-[350px] bg-brown-100 flex justify-center p-8">
-        <img
-          className="max-h-[220px]"
-          src="http://localhost:5173/src/assets/products/coffee/1.svg"
-          alt="prod"
-        />
+        <img className="max-h-[220px]" src={prod.image} alt="prod" />
       </div>
       <div className="w-[90%] mx-auto flex flex-col gap-2">
         <div className="product-details-card">
@@ -53,7 +49,7 @@ const ProductDetails = () => {
             <span className="text-sm text-gray-700 font-medium max-w-[50%]">
               {prod.description}
             </span>
-            <div className="rounded-md flex items-center justify-between gap-3">
+            <div className="flex items-center justify-between gap-3 border-2 border-brown-800 rounded-xl">
               <button
                 className="quantity-button rounded-l-md"
                 onClick={() => handleQuantity("-")}
@@ -87,7 +83,7 @@ const ProductDetails = () => {
           <h2 className="font-bold text-gray-900">Customizar</h2>
           <div className="flex flex-col gap-4">
             <div className="flex-between-center">
-              <span className="text-gray-900">Variação</span>
+              <span className="text-gray-900 text-sm">Variação</span>
               <div className="flex gap-2">
                 <button
                   className={
@@ -112,7 +108,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="flex-between-center">
-              <span className="text-gray-900">Tamanho</span>
+              <span className="text-gray-900 text-sm">Tamanho</span>
               <div className="flex gap-2">
                 <button
                   className={
@@ -147,7 +143,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="flex-between-center">
-              <span className="text-gray-900">Açúcar</span>
+              <span className="text-gray-900 text-sm">Açúcar</span>
               <div className="flex gap-2">
                 <button
                   className={
@@ -172,7 +168,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="flex-between-center">
-              <span className="text-gray-900">Gelo</span>
+              <span className="text-gray-900 text-sm">Gelo</span>
               <div className="flex gap-2">
                 <button
                   className={
@@ -202,7 +198,7 @@ const ProductDetails = () => {
           <div className="flex flex-col py-1">
             <p>Total</p>
             <span className="font-semibold text-gray-800 text-xl">
-              R$ {(prod.price * quantity).toFixed(2)}
+              R$ {(prod.price * quantity).toFixed(2).replace(".", ",")}
             </span>
           </div>
           <button className="customize-selected-button">
