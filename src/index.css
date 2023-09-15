@@ -50,11 +50,11 @@
 }
 
 .customize-selected-button {
-  @apply rounded-xl bg-brown-800 text-brown-50 text-xs px-1 py-2 sm:px-2 sm:py-3 font-semibold border-2 border-brown-800;
+  @apply rounded-xl border-2 bg-brown-800 text-brown-50 text-xs px-1 py-2 sm:px-2 sm:py-3 font-semibold border-brown-800;
 }
 
 .customize-unselected-button {
-  @apply rounded-xl bg-gray-50 text-brown-800 text-xs px-1 py-2 sm:px-2 sm:py-3 font-semibold border-2 border-brown-800;
+  @apply rounded-xl border-2 border-brown-800 bg-gray-50 text-brown-800 text-xs px-1 py-2 sm:px-2 sm:py-3 font-semibold;
 }
 
 .flex-between-center {

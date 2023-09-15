@@ -5,7 +5,7 @@ import NavigationMenu from "../components/NavigationMenu";
 import OrderCard from "../components/OrderCard";
 import OrderQuestions from "../components/OrderQuestions";
 
-const Checkout = ({ cart, removeItemFromCart }) => {
+const   Checkout = ({ cart, removeItemFromCart, handleItemQuantity }) => {
   const [section, setSection] = useState("checkout");
 
   const handleTitle = () => {
@@ -17,7 +17,11 @@ const Checkout = ({ cart, removeItemFromCart }) => {
   return (
     <>
       <NavigationMenu link="/" title={handleTitle()} />
-      <OrderCard cart={cart} removeItemFromCart={removeItemFromCart} />
+      <OrderCard
+        cart={cart}
+        removeItemFromCart={removeItemFromCart}
+        handleItemQuantity={handleItemQuantity}
+      />
       <OrderQuestions section={section} setSection={setSection} />
       <CheckoutFooter cart={cart} total={1.99} />
     </>

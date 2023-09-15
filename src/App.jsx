@@ -27,6 +27,25 @@ const App = () => {
     setCart(filter);
   };
 
+  const handleItemQuantity = (itemId, operation) => {
+    setCart((prevCart) => {
+      const updatedCart = prevCart.map((item) => {
+        if (item.id === itemId) {
+          let newQuantity = item.quantity;
+
+          if (operation === "adicionar") newQuantity += 1;
+          else if (operation === "remover" && item.quantity > 1)
+            newQuantity -= 1;
+
+          const newTotal = newQuantity * item.price;
+          return { ...item, quantity: newQuantity, total: newTotal };
+        }
+        return item;
+      });
+      return updatedCart;
+    });
+  };
+
   return (
     <Router>
       <div className="p-4 max-w-4xl mx-auto space-y-4">
@@ -39,7 +58,11 @@ const App = () => {
           <Route
             path="/checkout"
             element={
-              <Checkout cart={cart} removeItemFromCart={removeItemFromCart} />
+              <Checkout
+                cart={cart}
+                removeItemFromCart={removeItemFromCart}
+                handleItemQuantity={handleItemQuantity}
+              />
             }
           />
         </Routes>

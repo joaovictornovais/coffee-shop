@@ -3,9 +3,8 @@ import { FaRegEdit } from "react-icons/fa";
 import { BsTrash3 } from "react-icons/bs";
 import { IoIosArrowBack } from "react-icons/io";
 import NavigationMenu from "./NavigationMenu";
-import QuantityButton from "./QuantityButton";
 
-const OrderCard = ({ cart, removeItemFromCart }) => {
+const OrderCard = ({ cart, removeItemFromCart, handleItemQuantity }) => {
   return (
     <div className="checkout-section">
       {cart.map((product) => (
@@ -38,7 +37,23 @@ const OrderCard = ({ cart, removeItemFromCart }) => {
                   size={20}
                   onClick={() => removeItemFromCart(product.id)}
                 />
-                <QuantityButton />
+                <div className="flex gap-2 border-2 border-brown-800 rounded-xl items-center">
+                  <button
+                    className="bg-brown-800 text-white px-2 rounded-l-md"
+                    onClick={() => handleItemQuantity(product.id, "remover")}
+                  >
+                    -
+                  </button>
+                  <span className="text-xs text-center w-[12px]">
+                    {product.quantity}
+                  </span>
+                  <button
+                    className="bg-brown-800 text-white px-2 rounded-r-md"
+                    onClick={() => handleItemQuantity(product.id, "adicionar")}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
           </div>

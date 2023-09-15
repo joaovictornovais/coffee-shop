@@ -46,6 +46,7 @@ const ProductDetails = ({ addItemToCart }) => {
     const order = {
       id: uuidv4(),
       productId: product.id,
+      price: product.price,
       name: product.name,
       image: product.image,
       observations: handleDescription(),
@@ -79,7 +80,7 @@ const ProductDetails = ({ addItemToCart }) => {
             <span className="text-sm text-gray-700 font-medium max-w-[50%]">
               {product.description}
             </span>
-            <div className="flex items-center justify-between gap-3 border-2 border-brown-800 rounded-xl">
+            <div className="flex items-center justify-between gap-3 border-2 rounded-xl border-brown-800">
               <button
                 className="quantity-button rounded-l-md"
                 onClick={() => handleQuantity("-")}
