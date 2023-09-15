@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-// eslint-disable-next-line react/prop-types
 const NavigationMenu = ({ link, title, css, arrow }) => {
   return (
     <Link to={link}>

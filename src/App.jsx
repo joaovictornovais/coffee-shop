@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductDetails from "./pages/ProductDetails";
 import Checkout from "./pages/Checkout";
 import { useState } from "react";
+import Transaction from "./pages/Transaction";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -65,6 +66,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/transaction" element={<Transaction />} />
         </Routes>
       </div>
     </Router>
