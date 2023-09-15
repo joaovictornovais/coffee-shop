@@ -56,7 +56,7 @@ const ProductDetails = () => {
   };
 
   const handleTotal = () => {
-    return Number(product.price * quantity);
+    return Number(handleSubtotal(size) * product.price * quantity);
   };
 
   return (

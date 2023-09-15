@@ -23,7 +23,7 @@ const OrderCard = () => {
               </div>
               <div className="min-w-[30%] flex flex-col items-end justify-center">
                 <h2 className="text-gray-800 font-semibold text-lg">
-                  R$ {product.total}
+                  R$ {product.total.toFixed(2)}
                 </h2>
                 <span>x{product.quantity}</span>
               </div>
