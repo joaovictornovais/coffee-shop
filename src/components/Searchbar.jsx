@@ -1,9 +1,8 @@
+/* eslint-disable react/prop-types */
 import { BiSearch, BiCart } from "react-icons/bi";
-import { cart } from "../db/Cart";
 import { Link } from "react-router-dom";
 
-// eslint-disable-next-line react/prop-types
-const Searchbar = ({ searchToFilters }) => {
+const Searchbar = ({ searchToFilters, cart }) => {
   const count = cart.reduce((counter, obj) => {
     if (obj.productId !== 0) return (counter += 1);
   }, 0);

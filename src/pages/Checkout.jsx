@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import CheckoutFooter from "../components/CheckoutFooter";
 import NavigationMenu from "../components/NavigationMenu";
 import OrderCard from "../components/OrderCard";
 import OrderQuestions from "../components/OrderQuestions";
 
-const Checkout = () => {
+const Checkout = ({ cart, removeItemFromCart }) => {
   const [section, setSection] = useState("checkout");
 
   const handleTitle = () => {
@@ -16,9 +17,9 @@ const Checkout = () => {
   return (
     <>
       <NavigationMenu link="/" title={handleTitle()} />
-      <OrderCard />
+      <OrderCard cart={cart} removeItemFromCart={removeItemFromCart} />
       <OrderQuestions section={section} setSection={setSection} />
-      <CheckoutFooter total={1.99} />
+      <CheckoutFooter cart={cart} total={1.99} />
     </>
   );
 };

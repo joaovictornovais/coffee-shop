@@ -1,13 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { AiOutlineArrowRight, AiFillStar } from "react-icons/ai";
 import { products } from "../db/Products";
-import { addProductToCart } from "../db/Cart";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import NavigationMenu from "../components/NavigationMenu";
 import Button from "../components/Button";
 
-const ProductDetails = () => {
+// eslint-disable-next-line react/prop-types
+const ProductDetails = ({ addItemToCart }) => {
   const params = useParams();
 
   const product = products.find((product) => product.id === Number(params.id));
@@ -52,7 +52,7 @@ const ProductDetails = () => {
       quantity: quantity,
       total: handleTotal(),
     };
-    addProductToCart(order);
+    addItemToCart(order);
   };
 
   const handleTotal = () => {

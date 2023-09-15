@@ -1,6 +1,5 @@
-import { cart } from "../db/Cart";
-
-const CheckoutFooter = () => {
+/* eslint-disable react/prop-types */
+const CheckoutFooter = ({ cart }) => {
   const total = cart.reduce((resultado, valor) => {
     return resultado + Number(valor.total);
   }, 0);

@@ -1,11 +1,11 @@
+/* eslint-disable react/prop-types */
 import { FaRegEdit } from "react-icons/fa";
 import { BsTrash3 } from "react-icons/bs";
 import { IoIosArrowBack } from "react-icons/io";
 import NavigationMenu from "./NavigationMenu";
 import QuantityButton from "./QuantityButton";
-import { cart } from "../db/Cart";
 
-const OrderCard = () => {
+const OrderCard = ({ cart, removeItemFromCart }) => {
   return (
     <div className="checkout-section">
       {cart.map((product) => (
@@ -34,7 +34,10 @@ const OrderCard = () => {
                 <span className="text-sm font-medium">Editar</span>
               </div>
               <div className="flex items-center gap-2">
-                <BsTrash3 />
+                <BsTrash3
+                  size={20}
+                  onClick={() => removeItemFromCart(product.id)}
+                />
                 <QuantityButton />
               </div>
             </div>

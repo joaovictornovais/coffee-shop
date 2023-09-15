@@ -4,7 +4,7 @@ import Filters from "../components/Filters";
 import { useState } from "react";
 import Searchbar from "../components/Searchbar";
 
-const Home = () => {
+const Home = ({ cart }) => {
   const [query, setQuery] = useState("");
 
   const [data, setData] = useState("");
@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <Searchbar searchToFilters={searchToFilters} />
+      <Searchbar cart={cart} searchToFilters={searchToFilters} />
       <Promotions searchToFilters={data} />
       <Filters
         searchToFilters={data}
