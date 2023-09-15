@@ -28,7 +28,13 @@ const OrderQuestions = ({ section, setSection }) => {
             </h5>
             <span className="text-sm">Agora - 10 minutos</span>
           </div>
-          <input type="radio" id="now" name="delivery" value="now" />
+          <input
+            type="radio"
+            id="now"
+            name="delivery"
+            value="now"
+            defaultChecked
+          />
         </div>
         <div className="order-questions" onClick={() => setSection("payment")}>
           <div className="flex flex-col">
@@ -40,10 +46,10 @@ const OrderQuestions = ({ section, setSection }) => {
           <IoIosArrowForward />
         </div>
       </div>
-      <div className={section === "payment" ? "p-2" : "hidden"}>
-        <div className="flex flex-col justify-between">
+      <div className={section === "payment" ? "p-2 space-y-6" : "hidden"}>
+        <div className="flex flex-col gap-4 justify-between">
           {methods.map((method) => (
-            <div
+            <label
               key={method.id}
               className="flex justify-between"
               onClick={() => handleMethod(method.payment)}
@@ -71,7 +77,7 @@ const OrderQuestions = ({ section, setSection }) => {
                 onChange={() => setMethod(method.payment)}
                 name="payment-method"
               />
-            </div>
+            </label>
           ))}
         </div>
         <div className="flex justify-end">
