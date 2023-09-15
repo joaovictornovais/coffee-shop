@@ -2,6 +2,7 @@
 import { FaRegEdit } from "react-icons/fa";
 import { BsTrash3 } from "react-icons/bs";
 import { IoIosArrowBack } from "react-icons/io";
+import { Link } from "react-router-dom";
 import NavigationMenu from "./NavigationMenu";
 
 const OrderCard = ({ cart, removeItemFromCart, handleItemQuantity }) => {
@@ -28,10 +29,14 @@ const OrderCard = ({ cart, removeItemFromCart, handleItemQuantity }) => {
               </div>
             </div>
             <div className="flex justify-between text-gray-800">
-              <div className="flex items-center gap-2">
+              <Link
+                onClick={() => removeItemFromCart(product.id)}
+                to={`/products/${product.productId}`}
+                className="flex items-center gap-2"
+              >
                 <FaRegEdit />
                 <span className="text-sm font-medium">Editar</span>
-              </div>
+              </Link>
               <div className="flex items-center gap-2">
                 <BsTrash3
                   size={20}
