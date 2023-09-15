@@ -196,7 +196,7 @@ const ProductDetails = () => {
           <div className="flex flex-col py-1">
             <p>Total</p>
             <span className="font-semibold text-gray-800 text-xl">
-              R$ {handleTotal()}
+              R$ {handleTotal().toFixed(2)}
             </span>
           </div>
           <Link to="/checkout">
