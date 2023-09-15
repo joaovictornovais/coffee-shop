@@ -1,4 +1,3 @@
-import { products } from "../db/Products";
 import { FaRegEdit } from "react-icons/fa";
 import { BsTrash3 } from "react-icons/bs";
 import { IoIosArrowBack } from "react-icons/io";
@@ -19,16 +18,14 @@ const OrderCard = () => {
                   <h3 className="text-gray-800 font-semibold text-lg">
                     {product.name}
                   </h3>
-                  <span className="text-sm">
-                    Ice, Regular, Normal Sugar, Normal Ice
-                  </span>
+                  <span className="text-sm">{product.observations}</span>
                 </div>
               </div>
               <div className="min-w-[30%] flex flex-col items-end justify-center">
                 <h2 className="text-gray-800 font-semibold text-lg">
                   R$ {product.total}
                 </h2>
-                <span>x1</span>
+                <span>x{product.quantity}</span>
               </div>
             </div>
             <div className="flex justify-between text-gray-800">

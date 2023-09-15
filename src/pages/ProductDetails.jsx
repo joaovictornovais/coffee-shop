@@ -2,11 +2,10 @@ import { Link, useParams } from "react-router-dom";
 import { AiOutlineArrowRight, AiFillStar } from "react-icons/ai";
 import { products } from "../db/Products";
 import { addProductToCart } from "../db/Cart";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import NavigationMenu from "../components/NavigationMenu";
 import Button from "../components/Button";
-import { cart } from "../db/Cart";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -19,8 +18,6 @@ const ProductDetails = () => {
   const [size, setSize] = useState("Pequeno");
   const [sugar, setSugar] = useState(true);
   const [ice, setIce] = useState(false);
-
-  const [total, setTotal] = useState();
 
   const handleQuantity = (operation) => {
     if (operation === "+") setQuantity(quantity + 1);
@@ -48,6 +45,7 @@ const ProductDetails = () => {
   const addToCart = () => {
     const order = {
       id: uuidv4(),
+      productId: product.id,
       name: product.name,
       image: product.image,
       observations: handleDescription(),
@@ -58,10 +56,7 @@ const ProductDetails = () => {
   };
 
   const handleTotal = () => {
-    return (handleSubtotal(size) * product.price * quantity)
-      .toFixed(2)
-      .toString()
-      .replace(".", ",");
+    return Number(product.price * quantity);
   };
 
   return (
