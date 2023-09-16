@@ -47,6 +47,10 @@ const App = () => {
     });
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <Router>
       <div className="p-4 max-w-4xl mx-auto space-y-4">
@@ -63,6 +67,7 @@ const App = () => {
                 cart={cart}
                 removeItemFromCart={removeItemFromCart}
                 handleItemQuantity={handleItemQuantity}
+                clearCart={clearCart}
               />
             }
           />

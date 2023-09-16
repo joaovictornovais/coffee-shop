@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-const CheckoutFooter = ({ cart }) => {
+const CheckoutFooter = ({ cart, clearCart }) => {
   const total = cart.reduce((resultado, valor) => {
     return resultado + Number(valor.total);
   }, 0);
@@ -13,7 +13,9 @@ const CheckoutFooter = ({ cart }) => {
         <h2 className="text-2xl font-bold">R${total.toFixed(2)}</h2>
       </div>
       <Link to="/transaction">
-        <button className="customize-selected-button">Finalizar pedido</button>
+        <button className="customize-selected-button" onClick={clearCart}>
+          Finalizar pedido
+        </button>
       </Link>
     </footer>
   );
