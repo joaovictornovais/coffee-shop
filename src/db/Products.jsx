@@ -91,7 +91,7 @@ export const products = [
     description: "Uma opção nutritiva e gostosa para seus filhos.",
     category: "Drinks",
     image:
-      "https://cafeteria-tiarosa.s3.sa-east-1.amazonaws.com/products/drinks/3.png",
+      "https://cafeteria-tiarosa.s3.sa-east-1.amazonaws.com/products/drinks/4.png",
     oldPrice: 2.89,
     isPromotion: true,
     price: 1.96,
@@ -103,7 +103,7 @@ export const products = [
     description: "O clássico pão francês.",
     category: "Pastry",
     image:
-      "https://cafeteria-tiarosa.s3.sa-east-1.amazonaws.com/products/drinks/4.png",
+      "https://cafeteria-tiarosa.s3.sa-east-1.amazonaws.com/products/foods/1.png",
     oldPrice: 4.99,
     isPromotion: false,
     price: 4.29,
