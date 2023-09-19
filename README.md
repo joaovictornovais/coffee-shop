@@ -68,12 +68,3 @@
   rating: 4.7, // Avaliações
 },
 ```
-
-## To-do
-### Features que faltam no projeto
-- Informações do produto
-- Carrinho
-- Página de checkout
-### READMEmd
-- Imagem do produto
-- Fotos do site
